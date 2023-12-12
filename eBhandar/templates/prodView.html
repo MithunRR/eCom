@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.product_name}} {% endblock title %}
+
+{% block body %}
+
+
+<div class="container my-4" style="padding-top:110px">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <img src="/media/{{product.image}}" width="200px" height="300px">
+            </div>
+            <div class="row my-2">
+                <button class="col btn btn-primary mx-2">Buy Now</button>
+                <button class="col btn btn-primary mx-2" onClick="location.href='/prodView_add_to_cart/{{product.id}}'">Add To Cart</button>
+            </div>     
+        </div>
+        <div class="col-md-8">
+            <h3>{{product.product_name}}</h3>
+            <h6><b>Rs. {{product.price}} </b></h6>
+            <p>{{product.decs}}</P>
+        </div>  
+    </div>                                          
+</div>    
+
+{% endblock body %}  

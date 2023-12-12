@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Careers {% endblock title %}
+
+{% block body %}
+
+<div class="container my-3">
+    <h4>Fill your details.</h4>
+    <form action="/career" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="name" class="form-label">Name :</label>
+          <input type="name" class="form-control" id="name" name='name' placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email :</label>
+            <input type="email" class="form-control" id="email" name='email' placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone :</label>
+            <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter your phone number">
+          </div>
+          <div class="mb-3">
+            <label for="qual" class="form-label">Qualifition - Branch:</label>
+            <input type="qual" class="form-control" id="qual" name='qual' placeholder="Enter your Qualifition & Branch ">
+          </div>
+          <div class="mb-3">
+            <label for="skill" class="form-label">Skills: Separate by , quama</label>
+            <input type="skill" class="form-control" id="skill" name='skill' placeholder="(Ex. Python, MS-Exel, Communication)">
+          </div>
+          <div class="mb-3">
+            <label for="desc" class="form-label">Description :</label>
+            <textarea class="form-control" id="decs" name='desc' placeholder="Describe about you & application"></textarea>
+          </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+</div> 
+
+{% endblock body %}  

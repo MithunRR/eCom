@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Orders {% endblock title %}
+
+{% block body %} 
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a style="text-decoration:none; color:black;" href="/account">Account</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Your Addresses</li>
+      </ol>
+    </nav>
+    <h2>Your Addresses</h2>
+    <a class="btn btn-primary mx-1 my-1" href="#" class="card-link">Add New +</a>
+    <div class="row">
+        <div class="col-sm-6" style="width:80%; margin:auto">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Home</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a class="btn btn-danger mx-1 my-1" style="float:right" href="#" class="card-link">Delete</a>
+                <a class="btn btn-secondary mx-1 my-1" style="float:right" href="#" class="card-link">Edit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" style="width:80%; margin:auto">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Office</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural lead-in to additional content.</p>
+              <a class="btn btn-danger mx-1 my-1" style="float:right" href="#" class="card-link">Delete</a>
+                <a class="btn btn-secondary mx-1 my-1" style="float:right" href="#" class="card-link">Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock body %}  

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %} Home {% endblock title %} | eBhandar</title>
+
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="{% static 'css/script.js' %}"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+</head>
+<style>
+    {% block css %}
+    {% comment %} body{
+      background-color: rgb(255, 154, 154);
+  } {% endcomment %}
+      
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      .card-body:hover{
+        background-color: rgb(240, 237, 237);
+      }
+
+      .shops-d {
+        width: 500px; /* Set your desired width */
+      }
+      .shops-d p a{
+        text-decoration:none;
+        margin:2px;
+        color:black;
+      }
+      @media (max-width: 530px) {
+        .shops-d {
+          width: 270px; /* Set your desired width */
+        }
+    }
+
+
+
+
+    
+    
+    {% endblock css %}
+</style>
+  
+  <body>
+    <!-- <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: orange;" href="/">eBhandar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+              </a>
+              <ul class="dropdown-menu" style="--bs-dropdown-min-width: 270px;">
+                <li><a class="dropdown-item" href="/vegetable">Vegetables</a>
+                <li><a class="dropdown-item" href="#">Fruits</a></li>
+                <li><a class="dropdown-item" href="#">Stationary</a></li>
+                <li><a class="dropdown-item" href="#">Medicine</a></li>
+                <li><a class="dropdown-item" href="#">Dry Fruits</a></li>
+                <li><a class="dropdown-item" href="#">Fashion</a></li>
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><a class="dropdown-item" href="#">Steel</a></li>
+                <li><a class="dropdown-item" href="#">Daily Needs</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Ask anything...</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Shops in city
+              </a>
+              <ul class="dropdown-menu shops-d">
+                <div class="collapse" class="dropdown-item" id="paragraphDropdown">
+                  <p style="color:black">
+                    This is a paragraph that toggles down when the dropdown button is clicked.
+                  </p>
+                </div>
+                <p style="color:black">
+                  <a href="#" class="mx-1"> Laxminarayan Store</a>| 
+                  <a href="#">Sahakar Shopy</a>| 
+                  <a href="#">Nutan Vastra B</a>|
+                  <a href="#">Atharv Restaurant</a>|
+                  <a href="#">Shri Medical</a>|
+                  <a href="#">Shree Computers</a>|
+                  <a href="#">Shringar Arts</a>|
+                  <a href="#">Aarya Photo Studio</a>|
+                  <a href="#">Gajanan Offset</a>|
+                  <a href="#">Gajanan krishi K</a>|
+                  <a href="#">Mahavir Kapad K</a>|
+                  <a href="#">Sai Phul Bhandar</a>|
+                  <a href="#">Chandan Medical</a>|
+                  <a href="#">Samarth Mobile</a>|
+                  <a href="#">Banmeru Kirana</a>|
+                  <a href="#">Mundada Hardwear</a>|
+                  <a href="#">Patanjali Store</a>|
+                  <a href="#">Pooja Dresses</a>|
+                  <a href="#">Jagdamba Footwears</a>|
+                  <a href="#">Choradiya Hardwear</a>|
+                </p>
+                
+              </ul>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link link-secondary mx-2" aria-disabled="true" href="/account" >Hi, {{user.first_name}} | Account</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link link-secondary mx-2" aria-disabled="true" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-secondary mx-2" aria-disabled="true" href="/signup">SignUp</a>
+            </li>
+            {% endif %}
+          </ul>
+          <form method="get" action="/search" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="!.....Strictly Veg " aria-label="Search" name="search" id="search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <button type="button" class="btn btn-secondary mx-2" onClick="location.href='/view_cart'"> Cart </button>
+        </div>
+      </div>
+    </nav> -->
+
+    <div class="main-navbar">
+      <div class="ebhandar-logo">
+        <a><img src="{% static 'img/eBhandar.png' %}" alt=""></a>
+      </div>
+      <button href="#">Shop</button>
+      <button href="#">Category</button>
+      <form method="get" action="#" role="search">
+        <input type="search" placeholder="!.....Strictly Veg " aria-label="Search" name="search" id="search" />
+        <button type="submit">
+          Search
+        </button>
+      </form>
+      <button href="#">Login</button>
+      <button>Cart</button>
+    </div>
+    
+    {% block body %}
+    
+    {% endblock body %}
+
+    
+
+
+    <hr>
+    <div class="container" >
+      <footer class="py-5">
+        <div class="row">
+
+          <div class="col-2">
+            <h5>Know Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Servises</a></li>
+              <li class="nav-item mb-2"><a href="/career" class="nav-link p-0 text-muted">Careers</a></li>
+              <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-muted">About</a></li>
+              <li class="nav-item mb-2"><a href="/contact" class="nav-link p-0 text-muted">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-2">
+            <h5>Earn With Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Seller</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Delivery agent</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Affiliate</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Advertise</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-2">
+            <h5>Your Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/account" class="nav-link p-0 text-muted">Account</a></li>
+              <li class="nav-item mb-2"><a href="/profile" class="nav-link p-0 text-muted">Profile</a></li>
+              <li class="nav-item mb-2"><a href="/address" class="nav-link p-0 text-muted">Addresses</a></li>
+              <li class="nav-item mb-2"><a href="/orders" class="nav-link p-0 text-muted">Orders</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Payments</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-4 offset-1">
+            <form method="post">
+              {% csrf_token %}
+              <h5>Subscribe and stay up to dated !</h5>
+              <p>Get regular updates on email about our products and servises.</p>
+              <div class="d-flex w-100 gap-2">
+                <label for="email" class="visually-hidden">Email address</label>
+                <input id="email" type="email" name="email" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2024 <a href="#" style="text-decoration:none; color:black"><b>Akanksha Group</b></a>, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" target="_blank" href="https://www.instagram.com/ebhandar/"><img alt="instagram" src="https://w7.pngwing.com/pngs/815/101/png-transparent-www-mevrouwpak-nl-advertising-graphic-design-instagram-instagram-logo-business-advertising-thumbnail.png" class="bi" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><img alt="twitter" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.svg" class="bi" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="link-dark" target="_blank" href="https://www.facebook.com/profile.php?id=61551136987733"><img alt="facebook" src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-clipart-image-black-facebook-logo-png-transparentpng-13.png" class="bi" width="24" height="24"></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+
+    {% block js %}
+    
+    {% endblock js %}
+</body>
+
+</html>

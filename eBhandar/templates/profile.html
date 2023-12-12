@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Orders {% endblock title %}
+
+{% block body %} 
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a style="text-decoration:none; color:black;" href="/account">Account</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profile & Login</li>
+      </ol>
+    </nav>
+    <h2>Profile & Login</h2>
+      <div class="card" style="width: 90%; margin:auto">
+        <div class="card-body">
+            <a class="btn btn-secondary mx-1" style="float:right" href="#" class="card-link">Edit</a>
+          <h5 class="card-title">Name</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.first_name}} {{user.last_name}}</h6>
+          <hr>
+          <h5 class="card-title">Email</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+          <hr>
+          <h5 class="card-title">Mobile Number</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.phone}}</h6>
+          <hr>
+          <h5 class="card-title">Password</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><a href="#" style="text-decoration:none; ">Change Password</a></h6>
+          <hr>
+          <h5 class="card-title">Address |  <a href="#" style="text-decoration:none"> | Add+</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.address}}</h6>
+          <br>
+          <a class="btn btn-danger mx-1" style="float:right" href="/logout" class="card-link">Log Out</a>
+        </div>
+      </div>
+  </div>
+
+{% endblock body %}  

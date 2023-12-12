@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Thanks! {% endblock title %}
+
+{% block css %}
+
+    img {
+        width: 400px;
+    }
+
+    @media (max-width: 600px) {
+        img {
+            width: 260px;
+        }
+    }
+
+{% endblock css %}
+
+
+{% block body %} 
+
+<div class="container" style="text-align:center">
+    {% load static %}
+    <br>
+    <img src="{% static '/img/thanks.jpg' %}">
+    <h1>Thanks For Shopping...</h1>
+
+    <br>
+
+    <table style="margin:auto;">
+		<tr>
+			<th>
+				<a href="/tracker" class="mx-4" id="checkout"><button class="btn btn-secondary"> Track Order </button></a>
+                <br>
+                <br>
+				<a href="/" style="margin:auto; text-decoration:none;">Continue Shopping</a> 
+			</th>
+		</tr>
+	</table>
+
+</div>
+
+{% endblock body %}  

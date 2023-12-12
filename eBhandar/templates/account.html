@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Account {% endblock title %}
+
+{% block body %} 
+  <div class="container">
+    <br>
+    <h2>Account</h2>
+      <div class="card" style="width: 90%; margin:auto">
+        <div class="card-body">
+          <h5 class="card-title">Profile & Login</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Edit loign details & more.</h6>
+          <a class="btn btn-secondary mx-1" style="float:right" href="#" class="card-link">Edit</a>
+          <a class="btn btn-secondary mx-1" style="float:right" href="/profile" class="card-link">View</a>
+        </div>
+      </div>
+      <div class="card" style="width: 90%; margin:auto">
+        <div class="card-body">
+          <h5 class="card-title">Your Orders</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Track Order, View Order, etc</h6>
+          <a class="btn btn-secondary" style="float:right" href="/orders" class="card-link">View</a>
+        </div>
+      </div>
+      <div class="card" style="width: 90%; margin:auto; hover: background-color:gray;">
+        <div class="card-body">
+          <h5 class="card-title">Your Addresses</h5>
+          <h6 class="card-subtitle mb-2 text-muted">View and edit your addresses</h6>
+          <a class="btn btn-secondary" style="float:right" href="/address" class="card-link">View</a>
+        </div>
+      </div>
+  </div>
+
+{% endblock body %}  

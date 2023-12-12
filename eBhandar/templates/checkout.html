@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block title %} Checkout {% endblock title %} 
+
+{% block body %} 
+{% block item_count %}{{item_count}}{% endblock item_count %}
+
+<div class="container">
+    <div class="container my-3">
+        <h3>Review cart...</h3>
+        <ol class="list-group list-group-numbered">
+            {% for item in cart_items %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{ item.product.product_name }}</div>
+            </div>
+            <span class="badge bg-warning text-dark rounded-pill">X {{ item.quantity }}</span>
+            {% endfor %}
+        </ol>
+        <div class="fw-bold my-2 text-decoration-underline">Total Price: Rs. {{ total_price }}</div>
+    </div>
+    
+    <div class="container my-4">
+        <h3>Adddress Details ...</h3>
+        <form class="row g-3" method="post" action="/checkout"> 
+            {% csrf_token %}
+            <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Ritesh Deshmukh" required>
+              </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="ebhandar1@gmail.com" required>
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="77777 33333" required>
+            </div>
+            <div class="col-md-6">
+                <label for="landmark" class="form-label">Landmark</label>
+                <input type="text" class="form-control" name="landmark" id="landmark" placeholder="Water Tank">
+            </div>
+            <div class="col-12">
+              <label for="address1" class="form-label">Address line 1</label>
+              <input type="text" class="form-control" name="address1" id="address1" placeholder="78-2, Shri Ram Nivas, Mapari Galli" required>
+            </div>
+            <div class="col-12">
+              <label for="address2" class="form-label">Address line 2</label>
+              <input type="text" class="form-control" name="address2" id="address2" placeholder="Near Balaji Kirana, Lonar">
+            </div>
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" name="city" id="city" value="Lonar" readonly>
+            </div>
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <input type="text" class="form-control" name="state" id="state" value="Maharashtra" readonly>
+            </div>
+            <div class="col-md-2">
+              <label for="zip_code" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" name="zip_code" id="zip_code" value="443302" readonly>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Place Order</button>
+            </div>
+          </form>
+    </div>
+</div>
+
+{% endblock body %}

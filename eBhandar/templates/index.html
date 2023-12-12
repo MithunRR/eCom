@@ -1,0 +1,442 @@
+{% extends "base.html" %}
+
+{% block css %}
+
+
+  @media (max-width: 768px) {
+    .carousel-inner .carousel-item>div {
+      display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+      display: block;
+    }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-start,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-item-next:not(.carousel-item-start) {
+      transform: translateX(25%) !important;
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start,
+    .carousel-item-prev:not(.carousel-item-end) {
+      transform: translateX(-25%) !important;
+    }
+
+    .carousel-item-next.carousel-item-start,
+    .active.carousel-item-end {
+      transform: translateX(0) !important;
+    }
+
+    .carousel-inner .carousel-item-prev,
+    .carousel-item-prev:not(.carousel-item-end) {
+      transform: translateX(-25%) !important;
+    }
+  }
+
+  .shops-d {
+    width: 500px; /* Set your desired width */
+  }
+  .shops-d p a{
+    text-decoration:none;
+    margin:2px;
+    color:black;
+  }
+  @media (max-width: 530px) {
+    .shops-d {
+      width: 270px; /* Set your desired width */
+    }
+}
+
+
+@media (max-width: 1100px) {
+  .carousel-inner {
+    height:300px"
+  }
+}
+
+@media (max-width: 1100px) {
+  .carousel-caption {
+    height:300px"
+  }
+}
+
+
+
+{% endblock css %}
+
+{% block body %}
+
+{% load static %}
+<!-- category images buttons  -->
+<div class="category-navbar">
+  <div class="nav-cats" id="nav-cat-1">
+    <button><img src="{% static 'img/fashionCat.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-2">
+    <button><img src="{% static 'img/fruits.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-3">
+    <button><img src="{% static 'img/elec.png' %}" width="100%" alt=""></button>
+  </div>
+  <div class="nav-cats" id="nav-cat-4">
+    <button><img src="{% static 'img/dailyNeed.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-5">
+    <button><img src="{% static 'img/stationary.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-6">
+    <button><img src="{% static 'img/meds.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-7">
+    <button><img src="{% static 'img/veg.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-8">
+    <button><img src="{% static 'img/furniture.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-9">
+    <button><img src="{% static 'img/elec.png' %}" width="100%" alt=""> </button>
+  </div>
+  <div class="nav-cats" id="nav-cat-10">
+    <button><img src="{% static 'img/dryFruits.png' %}" width="100%" alt=""> </button>
+  </div>
+</div>
+
+
+
+<!-- carousal images -->
+<div class="slideshow-container-product">
+  <!-- images  -->
+  <div class="mySlides-product">
+      <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="" width="100%">
+      <div class="caption-text-product">Caption text 1</div>
+  </div>
+  <div class="mySlides-product">
+      <img src="{% static 'img/fruit.jpg' %}" alt="" width="100%">
+      <div class="caption-text-product">Caption text 2</div>
+  </div>
+  <div class="mySlides-product">
+      <img src="{% static 'img/of.png' %}" alt="" width="100%">
+      <div class="caption-text-product">Caption text 3</div>
+  </div>
+  <div class="mySlides-product">
+      <img src="{% static 'img/offer11.png' %}" alt="" width="100%">
+      <div class="caption-text-product">Caption text 4</div>
+  </div>
+
+  <a style="text-decoration:none" class="prev-product" onclick="plusSlides(-1)">&#10094;</a>
+  <a style="text-decoration:none" class="next-product" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- <br> -->
+
+<div class="featured-pr">
+  <div class="featured-pr-special">
+    <h4>Special deals</h4>
+    <div class="featured-pr-special-flex1">
+      <div class="featured-pr-special-item1"></div>
+      <div class="featured-pr-special-item2"></div>
+    </div>
+    <div class="featured-pr-special-flex2">
+      <div class="featured-pr-special-item3"></div>
+      <div class="featured-pr-special-item4"></div>
+    </div>
+    <a href="#">See More...</a>
+  </div>
+  <div class="featured-pr-recentHistory">
+    <h4>Orders History</h4>
+    <div class="featured-pr-recentHistory-flex1">
+      <div class="featured-pr-recentHistory-item1"></div>
+      <div class="featured-pr-recentHistory-item2"></div>
+    </div>
+    <div class="featured-pr-recentHistory-flex2">
+      <div class="featured-pr-recentHistory-item3"></div>
+      <div class="featured-pr-recentHistory-item4"></div>
+    </div>
+    <a href="#">See More...</a>
+  </div>
+  <div class="featured-pr-yourWishlist">
+    <h4>Wishlisted</h4>
+    <div class="featured-pr-yourWishlist-flex1">
+      <div class="featured-pr-yourWishlist-item1"></div>
+      <div class="featured-pr-yourWishlist-item2"></div>
+    </div>
+    <div class="featured-pr-yourWishlist-flex2">
+      <div class="featured-pr-yourWishlist-item3"></div>
+      <div class="featured-pr-yourWishlist-item4"></div>
+    </div>
+    <a href="#">See More...</a>
+  </div>
+  <div class="featured-pr-inCart">
+    <h4>In Cart</h4>
+    <div class="featured-pr-inCart-flex1">
+      <div class="featured-pr-inCart-item1"></div>
+      <div class="featured-pr-inCart-item2"></div>
+    </div>
+    <div class="featured-pr-inCart-flex2">
+      <div class="featured-pr-inCart-item3"></div>
+      <div class="featured-pr-inCart-item4"></div>
+    </div>
+    <a href="">See More...</a>
+  </div>
+</div>
+
+<!-- <br> -->
+
+<div class="deals-offers-container">
+  <div class="deals-big-div">
+    <button>
+      <div class="main-deal">
+        <!-- <img src="{% static 'img/Strawberry.jpg' %}" alt=""> -->
+        <!-- <h3>OFFER*</h3>
+        <h5>get 40% off on Vegetables</h5> -->
+      </div>
+    </button>
+  </div>
+  <div class="deals-small-divs">
+    <div class="sub-deal1">
+      <button>
+        <!-- <img src="{% static 'img/banana.jpg' %}" alt=""> -->
+      </button>
+    </div>
+    <div class="sub-deal2">
+      <button>
+        <!-- <img src="{% static 'img/pista.png' %}" alt=""> -->
+      </button>
+    </div>
+    <div class="sub-deal3">
+      <div class="deal3-one">
+        <button>
+          <!-- <img src="{% static 'img/potato.jpg' %}" alt=""> -->
+        </button>
+      </div>
+      <div class="deal3-two">
+        <button>
+          <!-- <img src="{% static 'img/potato.jpg' %}" alt=""> -->
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+  {% comment %} https://www.w3schools.com/bootstrap/chicago.jpg
+https://www.w3schools.com/bootstrap/la.jpg
+https://www.w3schools.com/bootstrap/ny.jpg
+ offer11.png   of.png    {% endcomment %}
+
+  <!-- carousel -->
+  {% for product, range, nSlides in allProds %}
+
+  <div id="myCarousel{{forloop.counter}}" class="carousel slide container" data-bs-ride="carousel">
+    <h3>{{product.0.category}}</h3>
+    <div class="carousel-inner w-100">
+
+      {% for i in product%}
+      {% if forloop.counter == 1 %}
+      <div class="carousel-item active">
+        <div class="col-md-3">
+          <div class="card card-body">
+            <img class="img-fluid" src="/media/{{i.image}}" style="height:170px" >
+            <h5 class="card-title">{{i.product_name}}</h5>
+            <h6>&#8377; {{i.price}}</h6>
+            <p class="card-text">{{i.decs|slice:"0:50"}} ...</p>
+            <button type="button" id="pr{{i.id}} cart" data-product-id="{{i.id}}" class="add-to-cart-btn btn btn-warning cart" style="border: 2px solid gray" onClick="location.href='/add_to_cart/{{i.id}}'"> Add to Cart </button>
+            <a href="/products/{{i.id}}"><button type="button" id="qv{{i.id}}" class="btn btn-secondary my-1"> Quick View </button></a>
+          </div>
+        </div>
+      </div>
+      
+      {% else %}
+      <div class="carousel-item">
+        <div class="col-md-3">
+          <div class="card card-body">
+            <img class="img-fluid" src="/media/{{i.image}}" style="height:170px" >
+            <h5 class="card-title">{{i.product_name}}</h5>
+            <h6>&#8377; {{i.price}}</h6>
+            <p class="card-text">{{i.decs|slice:"0:50"}} ...</p>
+            <button type="button"  id="pr{{i.id}} cart" data-product-id="{{i.id}}" class="add-to-cart-btn btn btn-warning cart" style="border: 2px solid gray" onClick="location.href='/add_to_cart/{{i.id}}'"> Add to Cart </button>
+            <a href="/products/{{i.id}}"><button type="button" id="qv{{i.id}} "  class="btn btn-secondary my-1"> Quick View </button></a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+
+    <button class="carousel-control-prev" style="width: 40px; " type="button" data-bs-target="#myCarousel{{forloop.counter}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="background-color: gray;" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" style="width: 40px; " type="button" data-bs-target="#myCarousel{{forloop.counter}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" style="background-color: gray;" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <hr>
+  </div>
+
+  
+  {% endfor %}
+
+  <!-- carousel end -->
+
+  <h1>Hello, Welcome!</h1>
+  {% load static %}
+  <a href="{% static 'img/akka.JPG' %}">Open Image...</a>
+  <br>
+  <a href="{% static 'img/harshu.JPG' %}">Open Image...</a>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- carousel script -->
+  <script>
+    // JS for carousal images
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n){
+    showSlides(slideIndex += n);
+}
+function currentSlides(n){
+    showSlides(slideIndex = n);
+}
+function showSlides(n){
+    var i;
+    var slides = document.getElementsByClassName("mySlides-product");
+    if (n > slides.length){slideIndex = 1}
+    if (n < 1) { slideIndex = slides.length }
+    for (i=0; i < slides.length; i++){
+        slides[i].style.display = "none";
+    }
+        slides[slideIndex - 1].style.display = "block";
+}
+
+// Auto slide carousal
+var slideIndex = 0;
+var slideTimeout;
+showSlides();
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides-product");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    // Clear the existing timeout before setting a new one
+    clearTimeout(slideTimeout);
+    // Set a new timeout for the next slide
+    slideTimeout = setTimeout(showSlides, 3000);
+}
+function plusSlides(n) {
+    // Clear the existing timeout before moving to the next/previous slide
+    clearTimeout(slideTimeout);
+    // Update the slide index based on the direction (next or previous)
+    slideIndex += n;
+    var slides = document.getElementsByClassName("mySlides-product");
+    // If the index goes beyond the last slide, loop back to the first slide
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    } else if (slideIndex < 1) {
+        // If the index goes below the first slide, go to the last slide
+        slideIndex = slides.length;
+    }
+    // Display the current slide
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+    // Set a new timeout for the next slide after manual navigation
+    slideTimeout = setTimeout(showSlides, 3000);
+}
+
+
+
+
+
+
+
+
+
+
+
+    $('.carousel .carousel-item').each(function () {
+      var minPerSlide = 4;
+      var next = $(this).next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+
+      for (var i = 0; i < minPerSlide; i++) {
+        next = next.next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+      }
+    });
+
+
+  </script>
+  <!-- carousel script end -->
+
+  
+
+  {% endblock body %}
+    
+  {% block js %}
+
+{% comment %} 
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Attach a click event handler to your "Add to Cart" buttons
+        $(".add-to-cart-btn").click(function(e) {
+            e.preventDefault();
+            var product_id = $(this).data('product-id');
+
+            $.ajax({
+                type: "POST",
+                url: "/add_to_cart/" + product_id + "/",
+                success: function(data) {
+                    console.log(data.message);
+                    // You can update the UI here if needed without a full page reload
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    console.log("Error adding item to cart");
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script> {% endcomment %}
+
+
+
+
+
+
+  {% endblock js %}

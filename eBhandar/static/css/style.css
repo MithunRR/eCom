@@ -1,0 +1,509 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(185, 185, 185);
+}
+
+.main-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: black;
+    padding: 5px 10%;
+    height: 70px;
+    display: flex;
+
+    /* display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background-color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px; */
+
+}
+.main-navbar .ebhandar-logo a img{
+    height: 100%;
+}
+.main-navbar button{
+    border: none;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+.main-navbar button:hover{
+    cursor: pointer;
+
+}
+.main-navbar form{
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+.main-navbar form input{
+    width: 100%;
+}
+.main-navbar form button{
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: rgb(255, 205, 112);
+}
+
+
+/* category navbar style  */
+
+.category-navbar{
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    /* margin-left: 0; */
+}
+.category-navbar .nav-cats{
+    width: 8%;
+}
+.category-navbar .nav-cats button{
+    border: none;
+    background-color: white;
+}
+
+
+
+/* offer image carousal slides  */
+.mySlides-product{
+    display: none;
+}
+
+.mySlides-product img {
+    vertical-align: middle;
+    height: 400px;
+}
+.slideshow-container-product{
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+
+}
+.prev-product, .next-product{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next-product{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev-product:hover, .next-product:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.caption-text-product{
+    color: white;
+    font-size: 40px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 20px;
+}
+@media screen and (max-width: 600px) {
+    .mySlides-product img {
+        height: 300px;
+    }
+    .caption-text-product{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .mySlides-product img {
+        height: 200px;
+    }
+    .caption-text-product{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .mySlides-product img {
+        height: 140px;
+    }
+    .caption-text-product{
+        font-size: 10px;
+    }
+}
+
+.nav-item .dropdown-menu p a:hover{
+    color: orange;
+    text-decoration: underline;
+}
+
+
+
+/* featured products like wishlist and cart style  */
+.featured-pr{
+    display: flex;
+    justify-content: space-between; 
+    margin: 20px;
+    /* width: 100%; */
+    height: 300px;
+    /* background-color: cadetblue; */
+    /* border: 2px solid red; */
+}
+.featured-pr .featured-pr-special{
+    width: 24%;
+    height: 100%;
+    border: 2px solid black;
+    background-color: rgb(232, 232, 232);
+}
+.featured-pr .featured-pr-special .featured-pr-special-flex1{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-special .featured-pr-special-flex1 .featured-pr-special-item1{
+    background: url("/static/img/tfan.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-special .featured-pr-special-flex1 .featured-pr-special-item2{
+    background: url("/static/img/banana.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr .featured-pr-special .featured-pr-special-flex2{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-special .featured-pr-special-flex2 .featured-pr-special-item3{
+    background: url("/static/img/potato.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-special .featured-pr-special-flex2 .featured-pr-special-item4{
+    background: url("/static/img/almond.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+
+.featured-pr .featured-pr-recentHistory{
+    height: 100%;
+    width: 24%;
+    border: 2px solid black;
+    background-color: rgb(232, 232, 232);
+}
+.featured-pr .featured-pr-recentHistory .featured-pr-recentHistory-flex1{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-recentHistory .featured-pr-recentHistory-flex1 .featured-pr-recentHistory-item1{
+    background: url("/static/img/methi.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-recentHistory .featured-pr-recentHistory-flex1 .featured-pr-recentHistory-item2{
+    background: url("/static/img/classmateN.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+.featured-pr .featured-pr-recentHistory .featured-pr-recentHistory-flex2{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-recentHistory .featured-pr-recentHistory-flex2 .featured-pr-recentHistory-item3{
+    background: url("/static/img/pista.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-recentHistory .featured-pr-recentHistory-flex2 .featured-pr-recentHistory-item4{
+    background: url("/static/img/tv1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+.featured-pr .featured-pr-yourWishlist{
+    border: 2px solid black;
+    height: 100%;
+    width: 24%;
+    background-color: rgb(232, 232, 232);
+}
+.featured-pr .featured-pr-yourWishlist .featured-pr-yourWishlist-flex1{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-yourWishlist .featured-pr-yourWishlist-flex1 .featured-pr-yourWishlist-item1{
+    background: url("/static/img/fan.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-yourWishlist .featured-pr-yourWishlist-flex1 .featured-pr-yourWishlist-item2{
+    background: url("/static/img/coffee.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+.featured-pr .featured-pr-yourWishlist .featured-pr-yourWishlist-flex2{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-yourWishlist .featured-pr-yourWishlist-flex2 .featured-pr-yourWishlist-item3{
+    background: url("/static/img/mango.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-yourWishlist .featured-pr-yourWishlist-flex2 .featured-pr-yourWishlist-item4{
+    background: url("/static/img/cabbage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+.featured-pr .featured-pr-inCart{
+    border: 2px solid black;
+    height: 100%;
+    width: 24%;
+    background-color: rgb(232, 232, 232);
+}
+.featured-pr .featured-pr-inCart .featured-pr-inCart-flex1{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-inCart .featured-pr-inCart-flex1 .featured-pr-inCart-item1{
+    background: url("/static/img/apsara.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-inCart .featured-pr-inCart-flex1 .featured-pr-inCart-item2{
+    background: url("/static/img/methi.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr .featured-pr-inCart .featured-pr-inCart-flex2{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+}
+.featured-pr-inCart .featured-pr-inCart-flex2 .featured-pr-inCart-item3{
+    background: url("/static/img/Strawberry.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+.featured-pr-inCart .featured-pr-inCart-flex2 .featured-pr-inCart-item4{
+    background: url("/static/img/oven.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+}
+
+
+
+
+ /* deals-offers-container style  */
+
+.deals-offers-container{
+    display: flex;
+    justify-content: space-between; 
+    height: 300px;
+}
+
+.deals-offers-container .deals-big-div{
+    margin-left: 20px;
+    width: 48%;
+}
+.deals-offers-container .deals-big-div button{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkJ5P3-k_h8wrid4jdbfGrnldX_hH6VGntaXMgGByc6yYRvzu3IqN8OfLj0jUVH9DMqw0&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%; 
+
+}
+.deals-offers-container .deals-big-div img{
+    width: 100%;
+    /* height: 200px;  */
+}
+
+.deals-offers-container .deals-small-divs{
+    width: 48%;
+    margin-right: 20px;
+}
+
+.deals-offers-container .deals-small-divs .sub-deal1{
+    background-color: #ffd3d3;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 34%;
+    /* margin-bottom: 2px; */
+}
+.deals-small-divs .sub-deal1 button{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvqDkjznYB3A4fxpYcT4mkvx5qoioWKrehMGakJ_ajmnZvmaVBAKT-hi4qt-hSuIAi0Js&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+.deals-small-divs .sub-deal1 img{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+
+.deals-offers-container .deals-small-divs .sub-deal2{
+    background-color: #ffd3d3;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 33%;
+    /* margin-bottom: 2px; */
+}
+.deals-small-divs .sub-deal2 button{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFd15lcceVCwKa-nIWf2vvO1y9-xxNtLhAayCPHwLmgxBWKZn0Fwp49oMc7XRBis9VmQ0&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+.deals-small-divs .sub-deal2 img{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+
+.deals-offers-container .deals-small-divs .sub-deal3{
+    display: flex;
+    justify-content: space-between; 
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 33%;
+    /* margin-bottom: 2px; */
+}
+.deals-small-divs .sub-deal3 .deal3-one{
+    width: 50%;
+    height: 100%;
+    
+}
+.deals-small-divs .sub-deal3 .deal3-one button{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVTDNwvMoBOHqeB5zffjQNvhxLwbO6QFp5SHWdlHQxd0NExL8VQklpuqUTfwmtMQbIB9I&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+.deals-small-divs .sub-deal3 .deal3-one img{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+.deals-small-divs .sub-deal3 .deal3-two{
+    width: 50%;
+    height: 100%;
+}
+.deals-small-divs .sub-deal3 .deal3-two button{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMUNq63EyMHhlvRCkA4fX_B0LxQ140BPEr0_K9EeIjXt1ObJE-00Os3ugNTacyJbTfhlw&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+.deals-small-divs .sub-deal3 .deal3-two button img{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%; 
+    display: block;
+}

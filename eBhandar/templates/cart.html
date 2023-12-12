@@ -1,0 +1,94 @@
+{% extends "base.html" %} 
+
+
+{% block title %} Cart {% endblock title %}
+
+{% block css %}
+		.product-list {
+			display: flex;
+			flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+			justify-content: space-between; /* Space items evenly along the main axis */
+			list-style: none; /* Remove list styles */
+			padding: 0;
+		}
+
+		.product-item {
+			
+			flex: 1; /* Grow to fill available space evenly */
+			/* Limit item width to avoid overcrowding */
+			margin: 10px; /* Add spacing between items */
+			border: 1px solid #ccc; /* Add a border for visual separation */
+			padding: 10px;
+			text-align: center;
+		}
+
+		/* Style the "Buy Now" button */
+		.buy-now-button {
+			display: block;
+			margin-top: 10px;
+			background-color: #007bff;
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+{% endblock css %}
+
+{% block body %}
+
+{% load static %}
+{% block item_count %}{{item_count}}{% endblock item_count %}
+
+<div class="container ">
+
+	<h1>... Shopping Cart</h1>
+
+	<div class="product-list">
+
+	{% for item in cart_items %}
+	<div class="product-item ">
+		<img src="/media/{{ item.product.image }}" class="card-img-top" alt="..." style="width:100px">
+		<h6 class="my-2">{{ item.product.product_name }} x <span style="color:blue">{{ item.quantity }}</span></h6>
+		<p>Price: Rs. {{ item.product.price }}</p>
+		<p class="card-text">{{item.product.decs|slice:"0:14"}} ...</p>
+		<button class="btn btn-warning"><a href="/dec_cart/{{item.product.id}}" style="text-decoration:none; color:black" > - </a></button>
+		<button class="btn btn-success"><a href="/inc_cart/{{item.product.id}}" style="text-decoration:none; color:black" > + </a></button>
+		<button class="btn btn-danger my-1"><a href="/remove_from_cart/{{item.id}}" style="text-decoration:none; color:black">Remove</a></button>
+	</div>
+	{% empty %}
+	<br>
+	<h3>Your cart is empty.</h3>
+	<br>
+	{% endfor %}
+
+	</div>
+
+	<p id="show_total"><b>Total Price: Rs. {{ total_price }}</b></p>
+	<p id="empty_cart" style="display:none">Please add Something to the cart...</p>
+
+	<table>
+		<tr>
+			<th>
+				<a href="/">Continue Shopping</a> 
+				<a href="/checkout" class="mx-4" id="checkout"><button class="btn btn-primary"> Checkout </button></a>
+			</th>
+		</tr>
+	</table>
+
+</div>	
+
+<script>
+	if ({{total_price}} !== 0){
+		document.getElementById("show_total").style.display = "block";
+	}
+	if ({{ total_price }} === 0){
+		document.getElementById("checkout").style.display = "none";
+		document.getElementById("show_total").style.display = "none";
+		document.getElementById("empty_cart").style.display = "block";
+	}
+</script>	
+
+<br>
+{% endblock body %}
+
+
