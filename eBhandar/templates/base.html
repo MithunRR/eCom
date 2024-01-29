@@ -60,7 +60,7 @@
 </style>
   
   <body>
-    <!-- <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" style="color: orange;" href="/">eBhandar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -150,9 +150,9 @@
           <button type="button" class="btn btn-secondary mx-2" onClick="location.href='/view_cart'"> Cart </button>
         </div>
       </div>
-    </nav> -->
+    </nav>
 
-    <div class="main-navbar">
+    {% comment %} <div class="main-navbar">
       <div class="ebhandar-logo">
         <a><img src="{% static 'img/eBhandar.png' %}" alt=""></a>
       </div>
@@ -166,7 +166,7 @@
       </form>
       <button href="#">Login</button>
       <button>Cart</button>
-    </div>
+    </div> {% endcomment %}
     
     {% block body %}
     
